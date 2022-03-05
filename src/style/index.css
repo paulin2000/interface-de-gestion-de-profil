@@ -1,0 +1,165 @@
+.connection-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* ces 4 composants permettent de faire un plein ecran */
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 17px;
+  overflow: auto;
+}
+
+.connection-form .form-container {
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 300px;
+  border-radius: 4px;
+}
+
+.connection-form .form-container ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  padding: 14px 14px 0;
+  cursor: pointer;
+}
+
+.connection-form .form-container ul .active-btn {
+  color: #7fa9ff;
+}
+
+.connection-form .form-container ul li {
+  text-align: center;
+  width: 50%;
+}
+
+.connection-form .form-container #sign-up-form {
+  position: relative;
+  width: 100%;
+  padding: 0 19px;
+}
+
+.connection-form .form-container #sign-up-form div {
+  width: inherit;
+}
+
+.connection-form .form-container #sign-up-form select {
+  width: inherit;
+  border-radius: 4px;
+  border: 1px solid #e3dfdf;
+  color: #6c6c6c;
+  padding: 5px;
+}
+
+.connection-form .form-container #sign-up-form input {
+  width: inherit;
+  border-radius: 4px;
+  border: 1px solid #e3dfdf;
+  padding: 4px;
+  background-color: white;
+}
+
+.connection-form .form-container #sign-up-form #term {
+  display: inline-block;
+  font-size: initial;
+}
+
+.connection-form .form-container #sign-up-form label {
+  display: block;
+  color: #6c6c6c;
+}
+
+.connection-form .form-container #sign-up-form input[type="submit"] {
+  background-color: #00a400;
+  color: white;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: none;
+}
+
+.connection-form .form-container #sign-up-form input[type="checkbox"] {
+  width: auto;
+}
+
+.connection-form .form-container #sign-up-form .error-grid {
+  left: 311px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  top: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.connection-form .form-container #sign-up-form .error-grid .error {
+  background-color: #ecf2f5;
+  font-size: smaller;
+  color: red;
+  font-weight: 500;
+  /* border: 1px solid #eee; */
+  padding: 4px;
+}
+
+.connection-form .form-container #sign-in-form {
+  width: 100%;
+  padding: 0 19px;
+}
+
+.connection-form .form-container #sign-in-form div {
+  width: inherit;
+}
+
+.connection-form .form-container #sign-in-form input {
+  width: inherit;
+  border-radius: 4px;
+  border: 1px solid #e3dfdf;
+  padding: 4px;
+}
+
+.connection-form .form-container #sign-in-form input[type="submit"] {
+  padding: 5px;
+  background-color: #00a400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
+.connection-form .form-container #sign-in-form label {
+  color: #6c6c6c;
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ecf2f5 !important;
+}
+/*# sourceMappingURL=index.css.map */
