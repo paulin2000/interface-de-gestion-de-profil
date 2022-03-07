@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {useState} from "react"
-import { Push } from 'typescript';
 
 const MainProfil = () => {
   const [file, setFile]= useState<File>()
@@ -14,9 +13,8 @@ const MainProfil = () => {
   const keyHandle = (e:any, setState: React.Dispatch<React.SetStateAction<boolean>>, state:boolean, dataType:string)=>{
     if (e.key === "Enter"){
       setState(!state)
-      const data =  {type: dataType, value: e.target.value}
+      //const data =  {type: dataType, value: e.target.value}
       // send data to socket and update front<
-      
     }
   }
   
