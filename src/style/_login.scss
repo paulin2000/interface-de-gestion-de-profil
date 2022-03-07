@@ -14,7 +14,7 @@
   .form-container{
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    width:300px;
+    width:350px;
     border-radius: 4px;
     ul{
       margin-top: 0;
@@ -69,7 +69,7 @@
   
       }
       input[type="submit"]{
-          background-color: #00a400;
+          background-color: #348CD4;
           color: white;
           border-radius: 4px;
           margin-top: 20px;
@@ -81,8 +81,7 @@
         width: auto;
       }
       .error-grid{
-
-        left: 311px;
+        left: 350px;
         position: absolute;
         display: flex;
         width: 300px;
@@ -110,6 +109,17 @@
       
         width: 100%;
         padding: 0 19px;
+        .password.error{
+          margin-top: 10px;
+          color: red;
+          font-size:14px;
+          font-weight:500
+        }
+        #success{
+          color: #00c400;
+          margin-bottom: 10px;
+          display:block;
+        }
         div{
           width: inherit;
         }
@@ -122,8 +132,8 @@
 
         input[type="submit"]{
           padding:5px;
-          background-color: #00a400;
-          margin-top:20px;
+          background-color: #348CD4;
+          margin-top:10px;
           margin-bottom:20px;
           color: white;
           border-radius: 4px;

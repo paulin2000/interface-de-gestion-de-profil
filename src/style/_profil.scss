@@ -1,0 +1,106 @@
+.main.profil{
+  .profil-container{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+
+    
+    .image-container{
+      flex-direction: column;
+      display: flex;
+      width: 300px;
+      
+      
+      img{
+        border-radius: 25px;
+        margin-bottom: 10px;
+        border:1px solid white;
+        width: 100%
+      }
+
+      form{
+
+        div{
+          width: max-content;
+          margin: auto;
+          position: relative;
+
+          input[type="file"]{
+            opacity: 0%;
+            margin:8px;
+            position: absolute;
+            cursor: pointer !important;
+            width: -webkit-fill-available;
+          }
+
+          .btn{
+            margin: 5px;
+          }
+
+          input[type="submit"]{
+            color: white;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            padding: 7px;
+            background-color: #348cd4;
+            width: -webkit-fill-available;
+          }
+        }
+      }
+    }
+    .info-container{
+      display: flex;
+      padding: 0 15px;
+      background-color: #f9fbfc;
+      border: 1px solid #eee;
+      flex-direction: column;
+      height: fit-content;
+      width: auto;
+      border: 1px solid #d3d2d2;
+      min-height: 230px;
+
+      div{
+        border-bottom: 0.5px solid #eee;
+        display: flex;
+        align-items: center;
+        &:last-child{
+          border-bottom:none;
+          
+        }
+      }
+
+      p{
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        word-wrap: break-word;
+        margin:10px;
+        font-family:cursive;
+
+        span{
+          position: absolute;
+          right:0;
+          transform: rotate(140deg);
+          cursor:pointer;
+          color:#005eac;
+        }
+      }
+      label{
+        width: 200px;
+        font-weight: 500;
+        opacity: 74%;
+        vertical-align: center;
+
+      }
+      input{
+        border: 1px solid #eee;
+        width: 200px;
+        margin: 10px;
+        border-radius: 5px;
+        padding: 6px;
+        text-align: center;
+      }
+    }
+  }
+}

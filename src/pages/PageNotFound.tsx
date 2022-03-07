@@ -1,16 +1,17 @@
 import React from 'react';
-import MainAdmin from '../pages-components/admin/MainAdmin';
 import Header from '../pages-components/components/Header';
 import Sidebar from '../pages-components/components/Sidebar';
 
-const Admin = () => {
+const PageNotFound = () => {
   return (
-    <div className='home'>
+    <div className='home notfound'>
       <Header/>
       <Sidebar/>
-      <MainAdmin/>
+      <div className="main">
+        <h5>Erreur 404: Page not found</h5>
+      </div>
     </div>
   );
 };
 
-export default Admin;
+export default PageNotFound;

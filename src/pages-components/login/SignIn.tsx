@@ -1,17 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
+interface Props{
+  enregSuccess: boolean;
+}
 
-
-const SignIn = () => {
+const SignIn = (props: Props) => {
 
   const [username, setUsername] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
     const handleLogin = (e:React.SyntheticEvent) => {
-        e.preventDefault()
-        console.log("handlelogin")
-        const signInError = document.querySelector(".password.error")
+      e.preventDefault()
+      const signInError:Element | null = document.querySelector(".password.error")
+        if ( signInError && (password==="" ||username === "")){
+          signInError.innerHTML = "Veuillez remplir tous les champs"
+          setTimeout(()=>{
+            signInError.innerHTML = ""
+          },3000)
+        }else{
+          //send Data to backend and wait for response
+         window.location.href="/home"
+          
+        }
+        
         // axios({
         //     method: "post",
         //     url: `http://localhost:5000/api/user/login`,
@@ -38,6 +51,7 @@ const SignIn = () => {
   return (
     <div>
       <form action="" onSubmit={handleLogin} id="sign-in-form">
+            {props.enregSuccess === true && <span id="success">Enregistrement Réussi... Connectez-vous</span>}
            <label htmlFor="username">Username / Email</label>
            <br />
            <input type="text" name="username" id="username"onChange={(e)=>setUsername(e.target.value)} value={username}/>

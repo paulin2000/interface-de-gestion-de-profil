@@ -1,9 +1,13 @@
-import React from 'react';
+import Header from '../pages-components/components/Header';
+import Sidebar from '../pages-components/components/Sidebar';
+import MainProfil from '../pages-components/profil/MainProfil';
 
 const Profil = () => {
   return (
-    <div>
-      Profil
+    <div className='home'>
+      <Header/>
+      <Sidebar/>
+      <MainProfil/>
     </div>
   );
 };
