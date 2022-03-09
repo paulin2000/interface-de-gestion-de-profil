@@ -1,8 +1,8 @@
 .connection-form {
+  overflow: hidden !important;
   position: fixed;
   top: 0;
   left: 0;
-  /* ces 4 composants permettent de faire un plein ecran */
   right: 0;
   bottom: 0;
   display: -webkit-box;
@@ -20,6 +20,7 @@
 }
 
 .connection-form .form-container {
+  position: relative;
   background-color: white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -53,8 +54,29 @@
   width: 50%;
 }
 
+.connection-form .form-container .error-grid {
+  left: 350px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  top: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.connection-form .form-container .error-grid .error {
+  background-color: #ecf2f5;
+  font-size: smaller;
+  color: red;
+  font-weight: 500;
+  padding: 4px;
+}
+
 .connection-form .form-container #sign-up-form {
-  position: relative;
   width: 100%;
   padding: 0 19px;
 }
@@ -103,28 +125,6 @@
   width: auto;
 }
 
-.connection-form .form-container #sign-up-form .error-grid {
-  left: 350px;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  top: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.connection-form .form-container #sign-up-form .error-grid .error {
-  background-color: #ecf2f5;
-  font-size: smaller;
-  color: red;
-  font-weight: 500;
-  padding: 4px;
-}
-
 .connection-form .form-container #sign-in-form {
   width: 100%;
   padding: 0 19px;
@@ -141,6 +141,7 @@
   color: #00c400;
   margin-bottom: 10px;
   display: block;
+  font-weight: 500;
 }
 
 .connection-form .form-container #sign-in-form div {
@@ -204,6 +205,10 @@
   top: 0;
 }
 
+.home .header i {
+  padding-left: 6px !important;
+}
+
 .home .header .logout {
   cursor: pointer;
 }
@@ -259,6 +264,7 @@
   margin-top: 3px;
   border-radius: 5px;
   font-weight: 500;
+  z-index: 3;
 }
 
 .home .main ul {
@@ -323,6 +329,10 @@
   opacity: 70%;
 }
 
+.home .sidebar i {
+  padding-right: 6px;
+}
+
 .home .sidebar ul {
   list-style: none;
   margin-top: 20px;
@@ -351,7 +361,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .main.profil .profil-container .image-container {
@@ -469,7 +480,7 @@
 .main.profil .profil-container .info-container p {
   position: relative;
   display: inline-block;
-  min-width: 250px;
+  width: 250px;
   word-wrap: break-word;
   margin: 10px;
   font-family: cursive;
@@ -483,6 +494,7 @@
           transform: rotate(140deg);
   cursor: pointer;
   color: #005eac;
+  opacity: 1;
 }
 
 .main.profil .profil-container .info-container label {

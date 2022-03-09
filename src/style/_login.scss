@@ -1,21 +1,23 @@
 .connection-form{  
+  overflow: hidden !important;
   position: fixed;
   top: 0;
   left: 0;
-  /* ces 4 composants permettent de faire un plein ecran */
   right: 0;
   bottom: 0;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size:17px;
-    overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  font-size:17px;
+  overflow: auto;
     
   .form-container{
+    position: relative;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     width:350px;
     border-radius: 4px;
+
     ul{
       margin-top: 0;
       margin-bottom: 1rem;
@@ -26,21 +28,36 @@
       list-style: none;
       padding: 11px 11px;
       cursor: pointer;
+
       .active-btn{
         
         color: white;
       }
-
       li{
         text-align: center;
         width: 50%;
         
       }
     }
+    .error-grid{
+      left: 350px;
+      position: absolute;
+      display: flex;
+      width: 300px;
+      top: 0;
+      flex-direction: column;
+      .error{
+        background-color: #ecf2f5;
+        font-size: smaller;
+        color: red;
+        font-weight: 500;
+        padding: 4px;
+      }
+    }
     #sign-up-form{
-      position: relative;
       width: 100%;
       padding: 0 19px;
+
       div{
         width: inherit;
       }
@@ -80,61 +97,45 @@
       input[type="checkbox"]{
         width: auto;
       }
-      .error-grid{
-        left: 350px;
-        position: absolute;
-        display: flex;
-        width: 300px;
-        top: 0;
-        flex-direction: column;
-        .error{
-          background-color: #ecf2f5;
-          font-size: smaller;
-          color: red;
-          font-weight: 500;
-          padding: 4px;
-        }
-
-      }  
-
+        
     }
     #sign-in-form{
-      
-        width: 100%;
-        padding: 0 19px;
-        .password.error{
-          margin-top: 10px;
-          color: red;
-          font-size:14px;
-          font-weight:500
-        }
-        #success{
-          color: #00c400;
-          margin-bottom: 10px;
-          display:block;
-        }
-        div{
-          width: inherit;
-        }
-        input{
-          width: inherit;
-          border-radius: 4px;
-          border: 1px solid #e3dfdf;
-          padding: 4px;
-        }
+      width: 100%;
+      padding: 0 19px;
 
-        input[type="submit"]{
-          padding:5px;
-          background-color: #348CD4;
-          margin-top:10px;
-          margin-bottom:20px;
-          color: white;
-          border-radius: 4px;
-          border:none;
-        }
-        label{
-          color:#6c6c6c;
-        }
+      .password.error{
+        margin-top: 10px;
+        color: red;
+        font-size:14px;
+        font-weight:500
+      }
+      #success{
+        color: #00c400;
+        margin-bottom: 10px;
+        display:block;
+        font-weight: 500;
+      }
+      div{
+        width: inherit;
+      }
+      input{
+        width: inherit;
+        border-radius: 4px;
+        border: 1px solid #e3dfdf;
+        padding: 4px;
+      }
+      input[type="submit"]{
+        padding:5px;
+        background-color: #348CD4;
+        margin-top:10px;
+        margin-bottom:20px;
+        color: white;
+        border-radius: 4px;
+        border:none;
+      }
+      label{
+        color:#6c6c6c;
+      }
     }
   }
 }

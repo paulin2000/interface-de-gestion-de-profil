@@ -67,8 +67,6 @@ const MainProfil = () => {
 
   return (
     <div className="main profil">
-      <h1>Profil</h1>
-
       <div className="profil-container">
         <div className="image-container">
           <img src="img/logo192.jpg" alt="pic" />

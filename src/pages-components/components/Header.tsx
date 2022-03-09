@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserInfoContext } from '../../App';
+import FontAwesomeIcon from "react-fontawesome"
 
 
 const Header = () => {
@@ -21,7 +22,10 @@ const Header = () => {
             <li><NavLink to="/profil"><img src="img/logo192.jpg" className= "user-pic"alt='user-pic'/></NavLink></li>
             <li><NavLink to="/profil">{user.username}</NavLink></li>
             <li><NavLink to={`/${user.access}`}>{user.access}</NavLink></li>
-            <li className="logout" onClick={handleLogout}>Logout</li>
+            <li className="logout" onClick={handleLogout}>
+              Logout
+              <i className="fas fa-sign-out"></i>
+            </li>
           </ul>
         </div>
       </div>

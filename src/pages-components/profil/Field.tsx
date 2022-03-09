@@ -118,7 +118,7 @@ const Field = (props: Props) => {
                       autoFocus
                       onKeyPress={(e) =>keyHandle(e,props.fieldSetState,props.fieldState,"password")}
                       />
-                      <span onClick={() => setViewPassword(!viewPassword)}>view</span>
+                      <span onClick={() => setViewPassword(!viewPassword)}><i className="fa-solid fa-eye"></i></span>
                     </div>
                     {/* <span>Error password</span> */}
                   </div>
@@ -132,7 +132,7 @@ const Field = (props: Props) => {
                     onKeyPress={(e) =>keyHandle(e,props.fieldSetState,props.fieldState,"password")}
                   />
                   <span onClick={() => setViewPassword(!viewPassword)}>
-                    view
+                  <i className="fa-solid fa-eye-slash"></i>
                   </span>
                 </>
               )}

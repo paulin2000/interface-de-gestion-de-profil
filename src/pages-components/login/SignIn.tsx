@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import AOS from "aos"
 interface Props{
   enregSuccess: boolean;
 }
@@ -46,10 +46,15 @@ const SignIn = (props: Props) => {
         //            console.log("catch : error de connexion")
         //     })
     }
-
+  useEffect(()=>{
+      AOS.init({
+        duration:500
+      }); 
+      AOS.refresh();
+  },[])
   return (
-    <div>
-      <form action="" onSubmit={handleLogin} id="sign-in-form">
+    <div >
+      <form action="" onSubmit={handleLogin} id="sign-in-form" data-aos="fade-right">
             {props.enregSuccess === true && <span id="success">Enregistrement Réussi... Connectez-vous</span>}
            <label htmlFor="username">Username / Email</label>
            <br />

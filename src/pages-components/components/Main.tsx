@@ -1,12 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import { UserInfoContext } from '../../App';
+import AOS from "aos"
+import 'aos/dist/aos.css';
 
 const Main = () => {
+
   const [welcome , setWelcome] = useState<boolean>(false)
   const user = useContext(UserInfoContext)
-  useEffect(()=>{
 
+  useEffect(()=>{
+    AOS.init({
+      duration:2000
+    }); 
+    AOS.refresh();
     if(localStorage.getItem("welcome")){
       setWelcome(false)
     }else{
@@ -17,10 +24,12 @@ const Main = () => {
       },10000)
     } 
   },[])
+
+
   
   return (
     <div className="main">
-      {welcome === true && <div className="welcome">
+      {welcome === true && <div data-aos="fade-down"className="welcome">
         Welcome {user.access} {user.username}
       </div>}
       <div className="nav-bar">

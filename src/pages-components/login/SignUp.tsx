@@ -1,4 +1,5 @@
-import { SetStateAction, useState } from 'react';
+import { SetStateAction, useState, useEffect } from 'react';
+import AOS from "aos"
 
 interface Props{
   setEnregSuccess:React.Dispatch<SetStateAction<boolean>>
@@ -8,7 +9,7 @@ interface Props{
 
 const SignUp = (props: Props) => {
   const [username, setUsername] = useState<string>('')
-  const [fullname, setFullname] = useState<string>('')
+  const [firstname, setFirstname] = useState<string>('')
   const [accountType, setAccountType] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [confirmPassword, setConfirmPassword] = useState<string>('')
@@ -27,7 +28,7 @@ const SignUp = (props: Props) => {
       let error :boolean = false
       
 
-      if(emptyError && (username==="" || fullname==="" || password==="")){
+      if(emptyError && (username==="" || firstname==="" || password==="")){
         error = true
         emptyError.innerHTML = "Veuillez remplir tous les champs"
         setTimeout(()=>{
@@ -81,11 +82,16 @@ const SignUp = (props: Props) => {
       //         .catch((err)=>console.log("erreur d'inscription"))
       // }
     }
-
+    useEffect(()=>{
+      AOS.init({
+        duration:500
+      }); 
+      AOS.refresh();
+    },[])
   return(
       <>            
-        <div className="form">
-          <form action='' onSubmit={handleRegister} id="sign-up-form">
+        <div className="form" >
+          <form action='' onSubmit={handleRegister} id="sign-up-form" data-aos="fade-left">
             <div className="username">
               <label htmlFor='username'>Username / Email</label>
               <input 
@@ -96,14 +102,14 @@ const SignUp = (props: Props) => {
                   value={username}
               />
             </div>
-            <div className="fullname">
-              <label htmlFor='fullname'>Fullname</label>
+            <div className="firstname">
+              <label htmlFor='firstname'>Firstname</label>
               <input 
                   type="text"
-                  name="fullname"
-                  id="fullname"
-                  onChange={(e)=>setFullname(e.target.value)}
-                  value={fullname}
+                  name="firstname"
+                  id="firstname"
+                  onChange={(e)=>setFirstname(e.target.value)}
+                  value={firstname}
               />
             </div>
             <div className="account-type">
@@ -140,14 +146,14 @@ const SignUp = (props: Props) => {
             
             <input type="checkbox" id="terms"/>
             <label htmlFor="terms" id="term">J'accepte <a href="/" target="_blank"rel="noopener noreferrer">les conditions générales</a></label>
-            <input type="submit" value="Valider les informations"/>
-            <div className="error-grid">
-              <div className="terms error"></div>
-              <div className="password-confirm error"></div>
-              <div className="empty error"></div>
-              <div className="password error"></div>
-            </div>
+            <input type="submit" value="S'inscrire"/>
           </form>
+        </div>
+        <div className="error-grid">
+            <div className="terms error"></div>
+            <div className="password-confirm error"></div>
+            <div className="empty error"></div>
+            <div className="password error"></div>
         </div>
       </>                
   )
