@@ -1,9 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserInfoContext } from '../../App';
 
 
 const Header = () => {
+  const user = useContext(UserInfoContext)
 
   const  handleLogout = ()=>{
+    localStorage.removeItem('welcome')
     //delete token, all localStorage Datas and redirect to login page
     window.location.href="/"
   }
@@ -15,9 +19,9 @@ const Header = () => {
         <div className="left-nav">
           <ul>
             <li><NavLink to="/profil"><img src="img/logo192.jpg" className= "user-pic"alt='user-pic'/></NavLink></li>
-            <li><NavLink to="/admin">Admin</NavLink></li>
-            <li><NavLink to="/profil">Username / Email</NavLink></li>
-            <li className="logout"onClick={handleLogout}>Logout</li>
+            <li><NavLink to="/profil">{user.username}</NavLink></li>
+            <li><NavLink to={`/${user.access}`}>{user.access}</NavLink></li>
+            <li className="logout" onClick={handleLogout}>Logout</li>
           </ul>
         </div>
       </div>

@@ -8,19 +8,19 @@ import Profil from "./Profil";
 import Shipper from "./Shipper";
 import Login from './Login';
 import PageNotFound from './PageNotFound';
+import { useContext } from "react";
+import { UserInfoContext } from "../App";
 
-interface User{
-  id:string,
-  name:string ,
-  permission:string
+
+interface userInfo{
+  id:string | null,
+  username:string | null,
+  access:string | null
 }
 
-const user:User ={
-  id:"ezrze",
-  name:"paulin",
-  permission: "admin"
-}
+
 const Index = () => {
+  const user:userInfo = useContext(UserInfoContext)
   return (
     <BrowserRouter>
       <Routes>
@@ -47,7 +47,7 @@ const Index = () => {
           element= {<ProtectedRoute 
                       redirectPath="/home"
                       userId = {user.id}
-                      isAllowed={user.permission === "client"}>
+                      isAllowed={user.access === "client"}>
                         <Client/>
                     </ProtectedRoute>
                    }/>
@@ -55,7 +55,7 @@ const Index = () => {
         element= {<ProtectedRoute 
                       redirectPath="/home"
                       userId = {user.id}
-                      isAllowed={user.permission === "partner"}>
+                      isAllowed={user.access === "partner"}>
                         <Partner/>
                     </ProtectedRoute>
                    }/>
@@ -63,7 +63,7 @@ const Index = () => {
           element= {<ProtectedRoute 
                       redirectPath="/home"
                       userId = {user.id}
-                      isAllowed={user.permission === "shipper"}>
+                      isAllowed={user.access === "shipper"}>
                         <Shipper/>
                     </ProtectedRoute>
                     }
@@ -72,7 +72,7 @@ const Index = () => {
           element= {<ProtectedRoute 
                       redirectPath="/home"
                       userId = {user.id}
-                      isAllowed={user.permission === "admin"}>
+                      isAllowed={user.access === "admin"}>
                         <Admin/>
                     </ProtectedRoute>
                     }

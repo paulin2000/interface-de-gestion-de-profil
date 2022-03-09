@@ -38,14 +38,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
+  background-color: #348cd4;
   list-style: none;
-  padding: 14px 14px 0;
+  padding: 11px 11px;
   cursor: pointer;
 }
 
 .connection-form .form-container ul .active-btn {
-  color: #7fa9ff;
+  color: white;
 }
 
 .connection-form .form-container ul li {
@@ -122,7 +122,6 @@
   font-size: smaller;
   color: red;
   font-weight: 500;
-  /* border: 1px solid #eee; */
   padding: 4px;
 }
 
@@ -197,6 +196,12 @@
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  -webkit-box-shadow: 0 1px 5px rgba(57, 63, 72, 0.3);
+          box-shadow: 0 1px 5px rgba(57, 63, 72, 0.3);
+  top: 0;
 }
 
 .home .header .logout {
@@ -346,6 +351,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 30px;
+  margin-bottom: 100px;
 }
 
 .main.profil .profil-container .image-container {
@@ -360,7 +366,7 @@
 }
 
 .main.profil .profil-container .image-container img {
-  border-radius: 25px;
+  border-radius: 15px;
   margin-bottom: 10px;
   border: 1px solid white;
   width: 100%;
@@ -410,9 +416,39 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: auto;
+  min-width: 490px;
   border: 1px solid #d3d2d2;
   min-height: 230px;
+}
+
+.main.profil .profil-container .info-container select {
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #eee;
+}
+
+.main.profil .profil-container .info-container .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main.profil .profil-container .info-container .input div {
+  border-bottom: none;
+}
+
+.main.profil .profil-container .info-container .input span {
+  text-align: center;
+  font-size: small;
+  font-weight: 500;
+  color: red;
 }
 
 .main.profil .profil-container .info-container div {
@@ -423,6 +459,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 44px;
 }
 
 .main.profil .profil-container .info-container div:last-child {
@@ -432,10 +469,11 @@
 .main.profil .profil-container .info-container p {
   position: relative;
   display: inline-block;
-  width: 200px;
+  min-width: 250px;
   word-wrap: break-word;
   margin: 10px;
   font-family: cursive;
+  min-height: 20px;
 }
 
 .main.profil .profil-container .info-container p span {
@@ -461,6 +499,7 @@
   border-radius: 5px;
   padding: 6px;
   text-align: center;
+  vertical-align: center;
 }
 
 body {

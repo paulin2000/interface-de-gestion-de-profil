@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { UserInfoContext } from '../../App';
 
 const Main = () => {
   const [welcome , setWelcome] = useState<boolean>(false)
-
+  const user = useContext(UserInfoContext)
   useEffect(()=>{
 
     if(localStorage.getItem("welcome")){
@@ -20,7 +21,7 @@ const Main = () => {
   return (
     <div className="main">
       {welcome === true && <div className="welcome">
-        Welcome Admin Username
+        Welcome {user.access} {user.username}
       </div>}
       <div className="nav-bar">
         <ul>

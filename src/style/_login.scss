@@ -22,13 +22,13 @@
       display: flex;
       align-content: center;
       justify-content: space-between;
-      padding: 0;
+      background-color: #348cd4;
       list-style: none;
-      padding: 14px 14px 0;
+      padding: 11px 11px;
       cursor: pointer;
       .active-btn{
         
-        color: #7fa9ff;
+        color: white;
       }
 
       li{
@@ -92,7 +92,6 @@
           font-size: smaller;
           color: red;
           font-weight: 500;
-          /* border: 1px solid #eee; */
           padding: 4px;
         }
 

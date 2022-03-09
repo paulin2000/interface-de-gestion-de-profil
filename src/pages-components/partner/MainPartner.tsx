@@ -3,7 +3,7 @@ import React from 'react';
 const MainPartner = () => {
   return (
     <div className='main partner'>
-      <h1>Partner</h1>
+      <h1>Partner Page</h1>
     </div>
   );
 };

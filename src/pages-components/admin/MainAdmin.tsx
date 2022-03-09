@@ -3,7 +3,7 @@ import React from 'react';
 const MainAdmin = () => {
   return (
     <div className='main admin'>
-      <h1>Main Admin</h1>
+      <h1>Admin Page</h1>
     </div>
   );
 };

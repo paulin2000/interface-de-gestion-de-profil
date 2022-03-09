@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 interface Props{
   setEnregSuccess:React.Dispatch<SetStateAction<boolean>>
@@ -7,7 +7,6 @@ interface Props{
 }
 
 const SignUp = (props: Props) => {
-  const [formSubmit, setFormSubmit] = useState<boolean>(false)
   const [username, setUsername] = useState<string>('')
   const [fullname, setFullname] = useState<string>('')
   const [accountType, setAccountType] = useState<string>('')
