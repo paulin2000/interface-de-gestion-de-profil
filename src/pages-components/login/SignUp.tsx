@@ -84,14 +84,14 @@ const SignUp = (props: Props) => {
     }
     useEffect(()=>{
       AOS.init({
-        duration:500
+        duration:300
       }); 
       AOS.refresh();
     },[])
   return(
       <>            
         <div className="form" >
-          <form action='' onSubmit={handleRegister} id="sign-up-form" data-aos="fade-left">
+          <form action='' onSubmit={handleRegister} id="sign-up-form" data-aos="fade-right">
             <div className="username">
               <label htmlFor='username'>Username / Email</label>
               <input 

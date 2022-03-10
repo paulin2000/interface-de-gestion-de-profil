@@ -48,13 +48,13 @@ const SignIn = (props: Props) => {
     }
   useEffect(()=>{
       AOS.init({
-        duration:500
+        duration:300
       }); 
       AOS.refresh();
   },[])
   return (
     <div >
-      <form action="" onSubmit={handleLogin} id="sign-in-form" data-aos="fade-right">
+      <form action="" onSubmit={handleLogin} id="sign-in-form" data-aos="fade-left">
             {props.enregSuccess === true && <span id="success">Enregistrement Réussi... Connectez-vous</span>}
            <label htmlFor="username">Username / Email</label>
            <br />
